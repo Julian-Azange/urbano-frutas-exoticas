@@ -1,0 +1,72 @@
+/* Redes sociales */
+.social {
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    z-index: 2000;
+    top: 42%;
+    width: 200px;
+    right: -120px;
+    /* Cambia 'left' a 'right' para mover al lado derecho */
+}
+
+.social ul{
+    list-style: none;
+}
+
+.red-social a{
+    list-style: none;
+    text-decoration: none;
+    background-color: none;
+    height: 46px;
+    padding: 0;
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background-color: #8bc115;
+    border-radius: 25px;
+    transition: all 0.25s ease-in-out;
+}
+
+
+
+.red-social a:hover {
+    margin-left: -110px;
+    background-color: #8ec21d;
+}
+
+.red-social a i {
+    margin: 0 10px;
+    font-size: 28px;
+    color: #8bc115;
+}
+
+.red-social a:hover i {
+    color: #72a504;
+}
+
+.red-social a p {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 900;
+}
+
+@media only screen and (max-width: 1024px) {
+    .social {
+        right: -160px;
+    }
+
+    .red-social a {
+        height: 36px;
+    }
+
+    .red-social a:hover {
+        margin-left: -100px;
+        /* Cambia 'margin-right' a 'margin-left' */
+    }
+
+    .red-social a i {
+        font-size: 22px;
+    }
+}
