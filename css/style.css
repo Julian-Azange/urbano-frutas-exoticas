@@ -11702,7 +11702,7 @@ a.text-dark:focus {
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+    content: " ("attr(title) ")";
   }
 
   pre {
@@ -12033,6 +12033,11 @@ h5,
     border-radius: 0px;
     padding-left: 0rem !important;
     padding-right: 0rem !important;
+  }
+
+  .nav-responsive {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -14327,7 +14332,7 @@ textarea.form-control {
   background-color: #7ab300;
 }
 
-.scroll-to-top:focus{
+.scroll-to-top:focus {
   border: none;
 }
 
