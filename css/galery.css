@@ -1,0 +1,330 @@
+#beneficio-laxante {
+    /* background-color: #f5f2ea; */
+    padding: 80px 0;
+}
+
+.titulo-laxante {
+    /* font-size: 48px; */
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.text-1 {
+    font-weight: 600;
+}
+
+.text-2 {
+    color: #8bc115;
+}
+
+.titulo-laxante {
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.titulo-laxante::before,
+.titulo-laxante::after {
+    position: absolute;
+    content: "";
+    width: 120%;
+    /* Ajustado a un ancho menor */
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+.titulo-laxante:hover::before {
+    top: -70%;
+    background-image: radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, transparent 15%, #8bc115 15%, transparent 25%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, transparent 8%, #8bc115 12%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%);
+    background-size: 6% 6%, 10% 10%, 8% 8%, 10% 10%, 9% 9%, 6% 6%, 8% 8%, 6% 6%, 9% 9%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 3s ease;
+}
+
+@keyframes greentopBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.titulo-laxante:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, transparent 8%, #8bc115 12%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%),
+        radial-gradient(circle, #8bc115 15%, transparent 15%);
+    background-size: 10% 10%, 8% 8%, 7% 7%, 10% 10%, 8% 8%, 10% 10%, 9% 9%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+    }
+
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+
+
+
+.imagen-texto-laxante {
+    text-align: center;
+}
+
+.imagen-contenedor {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* Puedes ajustar la altura según lo necesites */
+    overflow: hidden;
+}
+
+.imagen-completa {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-descripcion {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+
+    /* Ajustar tamaño del título en dispositivos móviles */
+    .titulo-laxante .display-1 {
+        font-size: 4rem;
+        /* Ajusta según el tamaño deseado */
+        line-height: 1.2;
+    }
+
+    /* Centrar y reducir el espacio en columnas */
+    #beneficio-laxante .col-md-6 {
+        text-align: center;
+    }
+
+    /* Reducción de márgenes para mejorar el ajuste en pantalla */
+    .titulo-laxante {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    /* Ajuste del tamaño de imagen y del contenedor en dispositivos móviles */
+    .imagen-texto-laxante .imagen-contenedor {
+        display: none;
+    }
+
+    /* Ajustar el contenedor de la imagen para que no sobresalga */
+    .imagen-contenedor {
+        max-width: 80%;
+        /* Ajusta el porcentaje si es necesario */
+        margin: 0 auto;
+    }
+
+    /* Reducción del texto de descripción */
+    .texto-descripcion {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+}
+
+
+
+/* ----- */
+
+
+/* Tabs */
+
+.b-tab {
+    border-radius: 10px;
+    border: none;
+}
+
+.b-tab:hover {
+    background-color: #76ab04 !important;
+}
+
+.filter-btn.active {
+    background-color: #f39c12 !important;
+    /* Cambia al color que desees */
+    color: #fff !important;
+    border-color: #f39c12 !important;
+}
+
+
+.b-tab:focus {
+    display: none;
+}
+
+/* Responsivo para dispositivos móviles */
+@media (max-width: 768px) {
+    .container .filter-btn {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+}
+
+/* --------- */
+
+#galeria-imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+}
+
+#galeria-imagenes .col-12,
+#galeria-imagenes .col-md-4,
+#galeria-imagenes .col-lg-3 {
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#galeria-imagenes .project {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+}
+
+/* Ajuste para dispositivos pequeños */
+@media (max-width: 768px) {
+    #galeria-imagenes .project {
+        height: 300px;
+    }
+
+    #galeria-imagenes .text {
+        display: none;
+    }
+}
+
+#galeria-imagenes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Clase de animación para desvanecimiento y desplazamiento */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Estado final después de la animación */
+.fade-in-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* Asegurarse de que los elementos estén visibles */
+.filter-item, .project {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* modal imagen */
+
+.image-modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.image-modal .modal-content {
+    max-width: 80%;
+    /* Máximo ancho del 80% de la pantalla */
+    max-height: 80%;
+    /* Máximo alto del 80% de la pantalla */
+    margin: auto;
+    display: block;
+    object-fit: contain;
+    /* Muestra la imagen en su tamaño original sin recortarla */
+    background-color: #ffffff00;
+}
+
+.image-modal #caption {
+    margin: auto;
+    display: block;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
