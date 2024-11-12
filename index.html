@@ -678,18 +678,23 @@
         // Inicializa la galería en el tab "all" al cargar la página
         document.addEventListener("DOMContentLoaded", () => cargarImagenes('all'));
 
-        // Añade el evento de clic a los botones de filtro
+        // Selecciona todos los botones de tabs
         const filterButtons = document.querySelectorAll('.filter-btn');
+
+        // Agrega el evento de clic a cada botón
         filterButtons.forEach(button => {
-            button.addEventListener('click', function () {
+            button.addEventListener('touchstart', function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+
                 const categoria = this.getAttribute('data-categoria');
                 cargarImagenes(categoria);
 
-                // Actualiza la clase 'active'
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 this.classList.add('active');
             });
         });
+
 
 
     </script>

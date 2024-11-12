@@ -206,6 +206,7 @@
     .container .filter-btn {
         font-size: 0.9rem;
         margin: 5px 0;
+        z-index: 1000;
     }
 }
 
