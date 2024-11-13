@@ -13449,6 +13449,7 @@ textarea.form-control {
 
 .heading-section {
   position: relative;
+  z-index: 1;
 }
 
 .heading-section .subheading {
