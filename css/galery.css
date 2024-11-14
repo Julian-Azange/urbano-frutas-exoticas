@@ -576,8 +576,8 @@
 
 .mute-button {
     position: fixed;
-    top: 30px;
-    right: 20px;
+    bottom: 30px;
+    left: 20px;
     width: 50px;
     height: 50px;
     background-color: #8bc115;
@@ -601,4 +601,11 @@
 
 .mute-button:focus {
     display: none;
+}
+
+/* Oculta el botón en dispositivos móviles */
+@media (max-width: 768px) {
+    .mute-button {
+        display: none;
+    }
 }

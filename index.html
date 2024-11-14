@@ -674,10 +674,11 @@
 
     <!-- boton para musica -->
     <button id="muteButton" class="mute-button">
-        <i id="muteIcon" class="fas fa-volume-up"></i>
+        <i id="muteIcon" class="fas fa-volume-mute"></i>
     </button>
 
-    <audio id="backgroundMusic" src="images/audio.mp3" loop></audio>
+    <audio id="backgroundMusic" src="images/audio.mp3" loop autoplay muted></audio>
+
 
     <!-- ---- -->
     <!-- boton para scroll -->
@@ -889,22 +890,27 @@
             const muteButton = document.getElementById("muteButton");
             const muteIcon = document.getElementById("muteIcon");
 
-            // Iniciar la reproducción de audio automáticamente
+            // Configurar el audio para que inicie en mute
+            audio.muted = true;
+            muteIcon.classList.add("fa-volume-mute"); // Establece el icono inicial en mute
+
+            // Iniciar la reproducción de audio automáticamente (muted)
             audio.play();
 
-            // Controlar el botón de mute
+            // Controlar el botón de mute solo en escritorio
             muteButton.addEventListener("click", () => {
                 if (audio.muted) {
-                    audio.muted = false;
+                    audio.muted = false; // Activar sonido
                     muteIcon.classList.remove("fa-volume-mute");
                     muteIcon.classList.add("fa-volume-up");
                 } else {
-                    audio.muted = true;
+                    audio.muted = true; // Silenciar
                     muteIcon.classList.remove("fa-volume-up");
                     muteIcon.classList.add("fa-volume-mute");
                 }
             });
         });
+
 
     </script>
 </body>
