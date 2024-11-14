@@ -381,7 +381,7 @@
         </div>
 
         <!-- Tabs de Filtrado -->
-        <div class="container text-center mb-4">
+        <div class="container text-center mb-4 section-tabs">
             <button class="btn btn-primary filter-btn b-tab active" data-categoria="all">Todos</button>
             <button class="btn btn-primary filter-btn b-tab" data-categoria="pitahaya_amarilla">Pitahaya
                 Amarilla</button>
@@ -589,30 +589,6 @@
     </section>
     <!-- ----- -->
 
-    <!-- Footer -->
-    <!-- <footer class="ftco-footer ftco-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md">
-                    <img class="img-footer" src="./images/urbano/logo-urbano.png" alt="" width="450">
-                </div>
-                <div class="col-md">
-                    <img class="img-footer" src="./images/urbano/tecnoparque-green-white.png" alt="" width="450">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>
-                        Copyright &copy;
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script>
-                        Todos los derechos reservados | Tecnoparque Pitalito
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer> -->
 
     <!-- footer -->
     <footer class="py-lg-8 py-5 bg-dark">
@@ -880,19 +856,26 @@
         // Selecciona todos los botones de tabs
         const filterButtons = document.querySelectorAll('.filter-btn');
 
-        // Agrega el evento de clic a cada botón
+        // Agrega el evento de clic y touchstart a cada botón
         filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                manejarTabSeleccionado(this);
+            });
+
             button.addEventListener('touchstart', function (event) {
                 event.preventDefault();
-                event.stopPropagation();
-
-                const categoria = this.getAttribute('data-categoria');
-                cargarImagenes(categoria);
-
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
+                manejarTabSeleccionado(this);
             });
         });
+
+        // Función para manejar la selección del tab
+        function manejarTabSeleccionado(button) {
+            const categoria = button.getAttribute('data-categoria');
+            cargarImagenes(categoria);
+
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
 
 
 

@@ -216,6 +216,10 @@
 
 /* Tabs */
 
+/* .section-tabs{
+    z-index: 1000;
+} */
+
 .b-tab {
     border-radius: 10px;
     border: none;
