@@ -5831,8 +5831,9 @@ a.badge:focus {
 }
 
 .badge-primary {
-  color: #fff;
-  background-color: #007bff;
+  color: #fff !important;
+  background-color: #8bc115 !important;
+  border-radius: 10px;
 }
 
 a.badge-primary:hover,
@@ -14304,29 +14305,32 @@ textarea.form-control {
 .scroll-to-top {
   position: fixed;
   bottom: 30px;
-  /* Espacio desde la parte inferior */
   right: 30px;
-  /* Espacio desde la derecha */
   background-color: #8bc115;
-  /* Color verde */
   color: white;
-  /* Color del icono */
   border: none;
   border-radius: 50%;
-  /* Botón redondeado */
   width: 50px;
-  /* Ancho del botón */
   height: 50px;
-  /* Alto del botón */
   font-size: 24px;
-  /* Tamaño del icono */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  /* Sombra */
   cursor: pointer;
   display: none;
-  /* Oculto por defecto */
   transition: all 0.3s ease;
-  /* Transición suave */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-align-items: center; /* Safari */
+  -webkit-justify-content: center; /* Safari */
+  z-index: 3000;
+}
+
+.scroll-to-top i {
+  margin: 0; /* Eliminar cualquier desplazamiento interno */
+  font-size: 20px; /* Asegurar un tamaño adecuado */
+  line-height: 1; /* Eliminar variaciones en la altura de línea */
+  display: block; /* Evitar que el ícono se ajuste dinámicamente */
+  text-align: center; /* Centrar texto o íconos en su contenedor */
 }
 
 .scroll-to-top:hover {

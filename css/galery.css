@@ -412,77 +412,54 @@
     z-index: 0;
 }
 
-.city-card {
-    position: relative;
+.city-card .card {
     width: 100%;
-    height: 250px;
-    /* Altura fija para las tarjetas */
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.city-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ajusta la imagen sin distorsión */
-    transition: transform 0.3s ease;
-}
-
-.city-card:hover {
-    transform: translateY(-5px);
-}
-
-.city-card:hover img {
-    transform: scale(1.1);
-    /* Zoom en hover */
-}
-
-.city-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
+    height: 300px;
+    background: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+    transition: 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .city-card .card .img {
+    flex: 1;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .city-card .card .text {
     padding: 15px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-start;
     text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.city-card:hover .city-info {
-    opacity: 1;
-}
-
-.city-title {
+  }
+  
+  .city-card .card .text .h3 {
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 5px;
-}
-
-.city-description {
+    /* color: #76ab04; */
+  }
+  
+  .city-card .card .text .p {
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
-}
-
-/* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
-    .city-card {
-        height: 200px;
-        /* Ajuste de altura en móviles */
-    }
-
-    .city-title {
-        font-size: 16px;
-    }
-
-    .city-description {
-        font-size: 12px;
-    }
-}
+    color: #777;
+  }
+  
+  .city-card .card:hover {
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
 
 
 /* --------- */
